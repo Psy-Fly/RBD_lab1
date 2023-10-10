@@ -1,0 +1,11 @@
+[
+ {
+  "Id;Name;RegDate;LastAuth;IsApproved;BirthDate;Gender": "0;Евгений;08.11.2021 7:40:08;10.10.2023 11:07:43;True;03.07.2003 16:27:53;Male"
+ },
+ {
+  "Id;Name;RegDate;LastAuth;IsApproved;BirthDate;Gender": "1;Никита;08.11.2022 0:28:19;10.10.2023 12:40:03;True;17.05.2022 16:00:05;Male"
+ },
+ {
+  "Id;Name;RegDate;LastAuth;IsApproved;BirthDate;Gender": "2;Сергей;07.11.2021 6:14:46;10.10.2023 15:16:35;False;19.12.1999 2:21:38;Male"
+ }
+]
