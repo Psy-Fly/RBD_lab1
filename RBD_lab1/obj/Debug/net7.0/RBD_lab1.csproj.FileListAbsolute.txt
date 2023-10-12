@@ -25,3 +25,5 @@ C:\Users\5047449\Documents\RiderProjects\RBD_lab1\RBD_lab1\bin\Debug\net7.0\runt
 C:\Users\5047449\Documents\RiderProjects\RBD_lab1\RBD_lab1\bin\Debug\net7.0\runtimes\win-x64\native\libSkiaSharp.dll
 C:\Users\5047449\Documents\RiderProjects\RBD_lab1\RBD_lab1\bin\Debug\net7.0\runtimes\win-x86\native\libSkiaSharp.dll
 C:\Users\5047449\Documents\RiderProjects\RBD_lab1\RBD_lab1\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\5047449\Documents\RiderProjects\RBD_lab1\RBD_lab1\bin\Debug\net7.0\System.Text.Encoding.CodePages.dll
+C:\Users\5047449\Documents\RiderProjects\RBD_lab1\RBD_lab1\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Text.Encoding.CodePages.dll

@@ -12,6 +12,7 @@
       <PackageReference Include="Bogus" Version="34.0.2" />
       <PackageReference Include="CsvHelper" Version="30.0.1" />
       <PackageReference Include="SuperConvert" Version="1.0.4.8" />
+      <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0-rc.2.23479.6" />
     </ItemGroup>
 
 </Project>

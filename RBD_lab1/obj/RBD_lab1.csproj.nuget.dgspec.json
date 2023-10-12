@@ -53,6 +53,10 @@
             "SuperConvert": {
               "target": "Package",
               "version": "[1.0.4.8, )"
+            },
+            "System.Text.Encoding.CodePages": {
+              "target": "Package",
+              "version": "[8.0.0-rc.2.23479.6, )"
             }
           },
           "imports": [
