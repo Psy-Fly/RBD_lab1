@@ -57,6 +57,18 @@ using (var reader = new StreamReader(reviewPath))
     }
 }
 
+for (int i = 0; i < newUsers.Count; i++)
+{
+    var pubs = newPublications.Where(x => x.UserId == newUsers[i].Id).ToList();
+    newUsers[i].Publications = pubs;
+
+    for (int l = 0; l < pubs.Count; l++)
+    {
+        var revs = newReviews.Where(x => x.PublicationId == pubs[l].Id && x.UserId == newUsers[i].Id).ToList();
+        pubs[l].Reviews = revs;
+    }
+}
+
 
 DeleteNonApprovedUsers();
 
@@ -64,16 +76,10 @@ DeleteNonApprovedUsers();
 var options = new JsonSerializerOptions { WriteIndented = true };
 
 var userJsonPath = @"D:\Documents\RBD\usersJson.json";
-var publicationJsonPath = @"D:\Documents\RBD\publicationsJson.json";
-var reviewJsonPath = @"D:\Documents\RBD\reviewsJson.json";
-
 var jsonUsers = JsonSerializer.Serialize(newUsers, options);
-var jsonPublications = JsonSerializer.Serialize(newPublications, options);
-var jsonReviews = JsonSerializer.Serialize(newReviews, options);
 
 File.WriteAllText(userJsonPath, jsonUsers);
-File.WriteAllText(publicationJsonPath, jsonPublications);
-File.WriteAllText(reviewJsonPath, jsonReviews);
+
 
 
 void WriteCsvUsers(List<User> users, string path)
@@ -285,7 +291,28 @@ public class UsersGenerator
                 publication.Name = faker.Commerce.Product();
                 publication.PublicationDate = faker.Date.Past();
                 publication.Category = faker.Commerce.Categories(1)[0];
-                publication.Description = faker.Lorem.Paragraph(3);
+                var badDescription = faker.Lorem.Paragraph(3);
+                var resultDescription = "";
+                char[] charsForEOL = { '.', ',', ' ' };
+                do
+                {
+                    for (int l = 50; l >= 1; l--)
+                    {
+                        if (charsForEOL.Contains(badDescription[l]))
+                        {
+                            resultDescription += badDescription.Substring(0, l) + " \n ";
+                            badDescription = badDescription.Substring(l + 1);
+                            break;
+                        }
+                        if(l == 1)
+                        {
+                            resultDescription += badDescription.Substring(0, 50) + " \n ";
+                            badDescription = badDescription.Substring(50 + 1);
+                        }
+                    }
+                } while (badDescription.Length > 50);
+
+                publication.Description = resultDescription;
                 publication.Size = faker.Random.Number(1, 3);
                 publication.Reviews = new List<Review>();
                 for (int k = 0; k < faker.Random.Number(0, 3); k++)
